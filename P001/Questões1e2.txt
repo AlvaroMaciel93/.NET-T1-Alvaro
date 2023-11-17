@@ -1,0 +1,41 @@
+Questão 1
+
+1. Configuração do Ambiente:
+Problema: Como você pode verificar se o .NET SDK está corretamente instalado em
+seu sistema? Em um arquivo de texto ou Markdown, liste os comandos que podem
+ser usados para verificar a(s) versão(ões) do .NET SDK instalada(s), como remover e
+atualizar.
+
+Verificar versão instalada: dotnet --version
+Listar versões instaladas: dotnet --list-sdks
+
+Questão 2
+
+2. Tipos de Dados:
+Problema: Quais são os tipos de dados numéricos inteiros disponíveis no .NET? Dê
+exemplos de uso para cada um deles através de exemplos.
+
+sbyte
+Exemplo: sbyte num = 10;
+
+byte
+Exemplo: byte num = 50;
+
+short
+Exemplo: short num = 1000;
+
+ushort
+Exemplo: ushort num = 60000;
+
+int
+Exemplo: int num = 1000000;
+
+uint
+Exemplo: uint num = 3000000000;
+
+long
+Exemplo:
+long num = 9000000000000000;
+
+ulong
+Exemplo: ulong num = 15000000000000000000;
