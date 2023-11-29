@@ -1,0 +1,5 @@
+/home/alvaro-maciel-dantas/Área de trabalho/Workspace/obj/Debug/net7.0/Workspace.csproj.AssemblyReference.cache
+/home/alvaro-maciel-dantas/Área de trabalho/Workspace/obj/Debug/net7.0/Workspace.GeneratedMSBuildEditorConfig.editorconfig
+/home/alvaro-maciel-dantas/Área de trabalho/Workspace/obj/Debug/net7.0/Workspace.AssemblyInfoInputs.cache
+/home/alvaro-maciel-dantas/Área de trabalho/Workspace/obj/Debug/net7.0/Workspace.AssemblyInfo.cs
+/home/alvaro-maciel-dantas/Área de trabalho/Workspace/obj/Debug/net7.0/Workspace.csproj.CoreCompileInputs.cache
