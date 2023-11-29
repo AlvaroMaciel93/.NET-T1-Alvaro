@@ -57,21 +57,39 @@ public class Program {
             }
         }
         // Consultas LINQ para relatórios
-        void RelatorioMedicosEntreIdades(List<Medico> medicos, int idadeMinima, int idadeMaxima)
-        {
+        void RelatorioMedicosEntreIdades(List<Medico> medicos, int idadeMinima, int idadeMaxima) {
             var medicosEntreIdades = medicos.Where(m => (DateTime.Now.Year - m.DataNascimento.Year) >= idadeMinima && (DateTime.Now.Year - m.DataNascimento.Year) <= idadeMaxima).ToList();
-            foreach (var medico in medicosEntreIdades)
-            {
+            foreach (var medico in medicosEntreIdades){
                 Console.WriteLine($"Médico: {medico.Nome}, Idade: {DateTime.Now.Year - medico.DataNascimento.Year}");
             }
         }
-        void RelatorioPacientesEntreIdades(List<Paciente> pacientes, int idadeMinima, int idadeMaxima)
-        {
+        void RelatorioPacientesEntreIdades(List<Paciente> pacientes, int idadeMinima, int idadeMaxima){
             var pacientesEntreIdades = pacientes.Where(m => (DateTime.Now.Year - m.DataNascimento.Year) >= idadeMinima && (DateTime.Now.Year - m.DataNascimento.Year) <= idadeMaxima).ToList();
-            foreach (var paciente in pacientesEntreIdades)
-            {
+            foreach (var paciente in pacientesEntreIdades) {
                 Console.WriteLine($"Paciente: {paciente.Nome}, Idade: {DateTime.Now.Year - paciente.DataNascimento.Year}");
+            }
+        }
+        void RelatorioPacientesPorSexo(List<Paciente> pacientes, string sexo) {
+            var pacientesPorSexo = pacientes.Where(p => p.Sexo.ToLower() == sexo.ToLower()).ToList();
+            foreach (var paciente in pacientesPorSexo) {
+                Console.WriteLine($"Paciente: {paciente.Nome}, Sexo: {paciente.Sexo}");
+            }
+        }
+
+        void RelatorioPacientesOrdemAlfabetica(List<Paciente> pacientes){
+            var pacientesOrdenados = pacientes.OrderBy(p => p.Nome).ToList();
+            foreach (var paciente in pacientesOrdenados) {
+                Console.WriteLine($"Paciente: {paciente.Nome}");
+            }
+        }
+
+        void RelatorioPacientesPorSintomas(List<Paciente> pacientes, string textoSintomas) {
+            var pacientesComSintomas = pacientes.Where(p => p.Sintomas.ToLower().Contains(textoSintomas.ToLower())).ToList();
+            foreach (var paciente in pacientesComSintomas) {
+                Console.WriteLine($"Paciente: {paciente.Nome}, Sintomas: {paciente.Sintomas}");
             }
         }
     }
 }
+
+#endregion
