@@ -102,6 +102,35 @@ public class Program {
                 }
             }
         }
+        static void MenuPrincipal() {
+        while (true)
+        {
+            Console.WriteLine("\n=== Menu Principal ===");
+            Console.WriteLine("1. Adicionar Médico");
+            Console.WriteLine("2. Adicionar Paciente");
+            Console.WriteLine("3. Relatório de Médicos por Idade");
+            Console.WriteLine("4. Relatório de Pacientes por Sexo");
+            Console.WriteLine("5. Relatório de Pacientes em Ordem Alfabética");
+            Console.WriteLine("6. Relatório de Pacientes por Sintomas");
+            Console.WriteLine("7. Relatório de Aniversariantes do Mês");
+            Console.WriteLine("8. Sair");
+
+            Console.Write("\nEscolha uma opção: ");
+            string escolha = Console.ReadLine();
+            switch (escolha) {
+                case "1":
+                    Console.Write("Nome do Médico: ");
+                    string nomeMedico = Console.ReadLine();
+
+                    Console.Write("Data de Nascimento (yyyy/mm/dd): ");
+                    DateTime dataNascimentoMedico = DateTime.Parse(Console.ReadLine());
+
+                    Console.Write("CPF do Médico: ");
+                    string cpfMedico = Console.ReadLine();
+
+                    Console.Write("CRM do Médico: ");
+                    string crmMedico = Console.ReadLine();
+                
     }
 }
 
