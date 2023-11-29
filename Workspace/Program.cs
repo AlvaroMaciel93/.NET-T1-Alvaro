@@ -90,16 +90,14 @@ public class Program {
             }
         }
         void RelatorioAniversariantesDoMes(int mes, List<Medico> medicos, List<Paciente> pacientes) {
-            var aniversariantes = medicos.Where(m => m.DataNascimento.Month == mes).Union(pacientes.Where(p => p.DataNascimento.Month == mes)).ToList();
-            foreach (var pessoa in aniversariantes) {
-                if (pessoa is Medico) {
-                    var medico = (Medico)pessoa;
-                    Console.WriteLine($"Médico aniversariante do mês {mes}: {medico.Nome}");
-                }
-                else if (pessoa is Paciente) {
-                    var paciente = (Paciente)pessoa;
-                    Console.WriteLine($"Paciente aniversariante do mês {mes}: {paciente.Nome}");
-                }
+            var medicosAniversariantes = medicos.Where(m => int.Parse(m.DataNascimento.Split('/')[1]) == mes).ToList();
+            var pacientesAniversariantes = pacientes.Where(p => int.Parse(p.DataNascimento.Split('/')[1]) == mes).ToList();
+            Console.WriteLine($"Aniversariantes do Mês {mes}:");
+            foreach (var medico in medicosAniversariantes) {
+                Console.WriteLine($"Médico aniversariante: {medico.Nome}");
+            }
+            foreach (var paciente in pacientesAniversariantes) {
+                Console.WriteLine($"Paciente aniversariante: {paciente.Nome}");
             }
         }
         static void MenuPrincipal() {
