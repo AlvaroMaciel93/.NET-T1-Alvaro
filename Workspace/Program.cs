@@ -89,6 +89,19 @@ public class Program {
                 Console.WriteLine($"Paciente: {paciente.Nome}, Sintomas: {paciente.Sintomas}");
             }
         }
+        void RelatorioAniversariantesDoMes(int mes, List<Medico> medicos, List<Paciente> pacientes) {
+            var aniversariantes = medicos.Where(m => m.DataNascimento.Month == mes).Union(pacientes.Where(p => p.DataNascimento.Month == mes)).ToList();
+            foreach (var pessoa in aniversariantes) {
+                if (pessoa is Medico) {
+                    var medico = (Medico)pessoa;
+                    Console.WriteLine($"Médico aniversariante do mês {mes}: {medico.Nome}");
+                }
+                else if (pessoa is Paciente) {
+                    var paciente = (Paciente)pessoa;
+                    Console.WriteLine($"Paciente aniversariante do mês {mes}: {paciente.Nome}");
+                }
+            }
+        }
     }
 }
 
